@@ -1,0 +1,79 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  transition: 1ms opacity ease;
+  background: rgba(0,0,0,.6);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  width: 94%;
+  padding: 24px 20px;
+  transition: 1ms opacity ease;
+  transform: translate(-50%, -50%);
+  border-radius: 2px;
+  background: #fff;
+}
+
+.modal.open {
+  opacity: 1;
+}
+
+.overlay.open {
+  opacity: 1;
+}
+
+.close {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 12px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 5px 7px 7px;
+  cursor: pointer;
+  color: #fff;
+  border: 0;
+  outline: none;
+  background: #e74c3c;
+}
+
+.close:hover {
+  background: #c0392b;
+}
+.overlay.fade-and-drop {
+  display: block;
+  opacity: 0;
+}
+
+.modal.fade-and-drop {
+  top: -300%;
+  opacity: 1;
+  display: block;
+}
+
+.modal.fade-and-drop.open {
+  top: 50%;
+  transition: top 300ms ease-out;
+}
+
+.overlay.fade-and-drop.open {
+  top: 0;
+  transition: opacity ease;
+  opacity: 1;
+}
+
+.modal.fade-and-drop {
+  transition: 500ms top ease;
+}
+
+.overlay.fade-and-drop {
+  transition: 150ms opacity 500ms ease;
+}
